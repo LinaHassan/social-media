@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.1), 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.1),
+      inset 0 -0.1875rem 0.125rem rgba(0, 0, 0, 0.2);
+      width: 50vw;
+      margin:2rem 0;
+      
+  }
+  .title{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: flex-start;
+  }

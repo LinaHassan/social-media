@@ -1,0 +1,16 @@
+:root {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.0094rem;
+  color-scheme: light dark;
+
+  background-color: #f7f7f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+

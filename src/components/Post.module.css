@@ -1,0 +1,51 @@
+.Post_continer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.0156rem solid #acacac;
+  row-gap: 1rem;
+  padding: 1rem;
+  text-align: start;
+}
+P {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+.User_info {
+  display: flex;
+  column-gap: 1rem;
+}
+.User_name {
+  color: rgba(0, 0, 0, 0.8);
+}
+.User_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment_Sec {
+  padding: 0.5rem;
+  border-top: 0.0156rem solid #acacac;
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.4rem;
+}
+a {
+  text-decoration: none;
+}
+.comment {
+  border: none;
+  text-align: start;
+  background-color: #f7f7f7;
+}
+.commentPic{
+  width:5%;
+  height: 3%;
+}
+.comment_input{
+  display: flex;
+  column-gap:1rem;
+  padding-top: 1rem;
+}
