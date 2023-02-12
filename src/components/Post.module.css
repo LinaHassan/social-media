@@ -39,6 +39,7 @@ a {
   border: none;
   text-align: start;
   background-color: #f7f7f7;
+  padding:0 1rem;
 }
 .commentPic{
   width:5%;

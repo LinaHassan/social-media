@@ -7,12 +7,19 @@ const PostList = () => {
   const [add, setadd] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [addPost, setaddPost] = useState(false);
- 
+  const [showBtn, setShowBtn] = useState(true);
+  const [searchPost, setSearchPost] = useState("");
+  const [seeMore, setseeMore] = useState(5);
+  function showMoreHandler() {
+    {showBtn? setseeMore(seeMore+5): setseeMore(seeMore-5)}
+   
+    setShowBtn(!showBtn)
+  }
 
   const submitHandlar = async (e) => {
     e.preventDefault();
     setadd([...add, inputValue]);
-    console.log(add)
+    console.log(add);
     setInputValue("");
     setaddPost(false);
   };
@@ -36,6 +43,14 @@ const PostList = () => {
   return (
     <>
       <div>
+        <input
+          className={classes.searchPost}
+          type="text"
+          placeholder="Search..."
+          onChange={(event) => {
+            setSearchPost(event.target.value);
+          }}
+        />
         <div className={classes.addPost_sec}>
           <button
             style={{
@@ -71,24 +86,34 @@ const PostList = () => {
           </div>
         </div>
         <ul>
-          {posts.map((post) => (
-            <Post
-              key={post.id}
-              body={post.body}
-              id={post.id}
-              username={user.username}
-              name={user.name}
-            />
-          ))}
-           {add.map((P) => (
-            <Post
-              key={P}
-              body={P}
-              username={user.username}
-              name={user.name}
-            />
+          {posts
+            .slice(0, seeMore)
+            .filter((val) => {
+              if (searchPost == "") {
+                return val;
+              } else if (
+                val.body.toLowerCase().includes(searchPost.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((post) => (
+              <Post
+                key={post.id}
+                body={post.body}
+                id={post.id}
+                username={user.username}
+                name={user.name}
+              />
             ))}
+          {add.map((P) => (
+            <Post key={P} body={P} username={user.username} name={user.name} />
+          ))}
         </ul>
+
+        <button className={classes.loadBtn} onClick={showMoreHandler}>
+       {showBtn? "Show More":"Show less "}
+        </button>
       </div>
     </>
   );

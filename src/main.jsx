@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Login from "./components/Login";
 import Posts from "./components/Posts";
-import NewPost from "./components/NewPost";
 import Comments from "./components/Comments" 
 const router = createBrowserRouter([
   {
@@ -16,14 +15,7 @@ const router = createBrowserRouter([
       {
         path: "/Profile",
         element: <Posts/>,
-        children: [
-          {
-            path: "/Profile/create-post",
-            element: <NewPost />,
-        
-          },
-       
-        ],
+
       },
       {
         path: "/Comments/:id",
